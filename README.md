@@ -25,7 +25,7 @@ Il faut **Python 3**, sans rien installer de plus (Turtle est inclus dans Python
 python tours_de_hanoi.py
 ```
 
-Clique dans la fenêtre pour commencer, puis réponds aux questions dans le terminal (de 1 à 7 disques).
+Clique dans la fenêtre pour commencer, puis réponds aux questions dans le terminal.
 
 ## 🧠 L'algorithme récursif
 
