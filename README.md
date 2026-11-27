@@ -1,49 +1,49 @@
-# Tours de Hanoï
+# Tower of Hanoi
 
-Le jeu des tours de Hanoï en Python, avec un affichage graphique en Turtle et une résolution automatique animée.
+The Tower of Hanoi game in Python, with a Turtle graphics display and an animated automatic solver.
 
-Le but est de déplacer tous les disques de la tour de gauche à la tour de droite, un seul disque à la fois, sans jamais poser un disque sur un plus petit.
+The goal is to move every disk from the left tower to the right one, one disk at a time, never placing a disk on a smaller one.
 
-## Fonctionnalités
+## Features
 
-- Plateau et disques dessinés avec Turtle, une couleur par disque
-- Coups tapés dans le terminal (tour de départ, puis tour d'arrivée) ; un coup interdit est refusé avec un message
-- Annulation du dernier coup
-- Abandon possible à tout moment
-- Chronomètre et compteur de coups. On gagne si on termine en `2ⁿ + n` coups au maximum (le minimum possible est `2ⁿ − 1`)
-- Solution animée : l'algorithme récursif résout le jeu sous tes yeux
-- Tableaux de fin de partie pour chaque nombre de disques : meilleurs scores (en nombre de coups), meilleurs temps, et classement par temps de réflexion moyen par coup
+- Board and disks drawn with Turtle, one color per disk
+- Moves typed in the terminal (source tower, then target tower); an illegal move is rejected with a message
+- Undo the last move
+- Give up at any time
+- Timer and move counter. You win if you finish in at most `2ⁿ + n` moves (the minimum possible is `2ⁿ − 1`)
+- Animated solution: the recursive algorithm solves the game in front of you
+- End-of-game tables for each number of disks: best scores (in moves), best times, and ranking by average thinking time per move
 
-## Lancer
+## Running
 
-Il suffit de Python 3, Turtle est déjà inclus.
+Python 3 is enough; Turtle ships with it.
 
 ```bash
 python tours_de_hanoi.py
 ```
 
-Clique dans la fenêtre pour commencer, puis réponds aux questions dans le terminal.
+Click in the window to start, then answer the questions in the terminal. The prompts are in French.
 
-## L'algorithme récursif
+## The recursive algorithm
 
-Pour déplacer `n` disques de A vers C :
-1. déplacer `n − 1` disques de A vers B (récursivement)
-2. déplacer le plus grand disque de A vers C
-3. déplacer les `n − 1` disques de B vers C (récursivement)
+To move `n` disks from A to C:
+1. move `n − 1` disks from A to B (recursively)
+2. move the largest disk from A to C
+3. move the `n − 1` disks from B to C (recursively)
 
-On obtient la solution optimale, en `2ⁿ − 1` coups.
+This gives the optimal solution, in `2ⁿ − 1` moves.
 
-## Organisation du code
+## Code organization
 
-| Partie | Contenu |
+| Part | Content |
 |---|---|
-| Plateau | plateau représenté par des listes, vérification des coups et de la victoire |
-| Graphisme | dessin du plateau et des disques, effacement |
-| Jeu | lecture des coups, boucle de jeu, chronomètre |
-| Annulation | historique des positions, retour au coup précédent |
-| Scores | sauvegarde et affichage des tableaux de scores, de temps et de classement |
-| Solution | résolution récursive et animation |
+| Board | board stored as lists, move and win checks |
+| Graphics | drawing the board and disks, erasing |
+| Game | move input, game loop, timer |
+| Undo | position history, going back one move |
+| Scores | saving and displaying the score, time and ranking tables |
+| Solution | recursive solver and animation |
 
-## Auteur
+## Author
 
 Karim Glelah
